@@ -34,7 +34,7 @@ class EbookConverter(models.Model):
                 imgs_path_name = os.path.splitext(self.path.name)[0]
                 imgs_path_full = os.path.splitext(self.path.path)[0]
                 listdir = [path for path in os.listdir(imgs_path_full)]
-                return list(os.path.join(imgs_path_name, fname) for fname in listdir)
+                return sorted(list(os.path.join(imgs_path_name, fname) for fname in listdir))
             except Exception:
                 return list()
         return list()

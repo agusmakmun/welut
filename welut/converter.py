@@ -73,7 +73,7 @@ class FileConverter(object):
                     elif ext == '.pdf':
                         os.remove(pdf_file_full_path)
 
-            return list_filenames
+            return sorted(list_filenames)
 
         except Exception as e:
             raise e
