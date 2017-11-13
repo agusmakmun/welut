@@ -77,4 +77,13 @@ You can using ``ForeignKey`` or ``OneToOneField``.
 
 
 
+**Templates**
+
+::
+
+    {% for img_url in object.get_files %}
+      <img src="{{ img_url }}">
+    {% endfor %}
+
+
 .. _PyPI: https://pypi.python.org/pypi/welut
