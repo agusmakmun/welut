@@ -18,7 +18,12 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from app.views import ebook_viewer
+
 urlpatterns = [
+    # ebook viewer url on homepage
+    url(r'^$', ebook_viewer, name='ebook_viewer'),
+
     url(r'^admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

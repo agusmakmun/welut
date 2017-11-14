@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noodp, noydir" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welut Ebook Viewer</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="all">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    body {font-size: 13px;font-family: 'Raleway', sans-serif;background: url("https://www.toptal.com/designers/subtlepatterns/patterns/subtle_dots.png")}
+    .ebook-main-area img.img-page {max-width: 100%;box-shadow: 0 0 10px #ddd;margin-bottom: 1em}
+    .container {max-width: 900px}
+  </style>
+</head>
+
+<body>
+  <div class="container text-center">
+    <h3>{{ ebook.title }}</h3>
+    <hr/>
+    <div class="ebook-main-area">
+      {% for img_url in ebook.get_files %}
+        <img class="img-page" src="{{ MEDIA_URL }}{{ img_url }}">
+      {% endfor %}
+    </div>
+  </div><!-- end /.container -->
+</body>
+</html>

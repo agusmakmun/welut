@@ -3,4 +3,9 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-# Create your views here.
+from app.models import EBook
+
+
+def ebook_viewer(request):
+    ebook = EBook.objects.first()
+    return render(request, 'ebook_viewer.html', {'ebook': ebook})

@@ -34,7 +34,8 @@ class FileConverter(object):
         pdf_file_full_path = os.path.join(current_path, pdf_file)
 
         try:
-            subprocess.call(['ebook-convert', epub_file_full_path, pdf_file_full_path])
+            if not self.get_file_extension(epub_file_full_path).lower() == '.pdf':
+                subprocess.call(['ebook-convert', epub_file_full_path, pdf_file_full_path])
             subprocess.call(['pdftocairo', '-png', pdf_file_full_path, current_path])
 
             # try to move all .png files from previous path to next path

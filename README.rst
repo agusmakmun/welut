@@ -86,4 +86,12 @@ You can using ``ForeignKey`` or ``OneToOneField``.
     {% endfor %}
 
 
+
+Usage Preview
+------------------------------
+
+.. image:: https://raw.githubusercontent.com/agusmakmun/welut/master/welut_demo/media/welut-demo.png
+
+
+
 .. _PyPI: https://pypi.python.org/pypi/welut

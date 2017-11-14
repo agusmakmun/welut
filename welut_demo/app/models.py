@@ -15,5 +15,9 @@ class EBook(models.Model):
     def __str__(self):
         return self.title
 
+    def get_files(self):
+        """ return list images of ebook per-page """
+        return self.ebook_file.get_files()
+
     class Meta:
         ordering = ['-created']
