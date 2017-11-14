@@ -82,7 +82,7 @@ You can using ``ForeignKey`` or ``OneToOneField``.
 ::
 
     {% for img_url in object.get_files %}
-      <img src="{{ img_url }}">
+      <img src="{{ MEDIA_URL }}{{ img_url }}">
     {% endfor %}
 
 
