@@ -36,7 +36,9 @@ class FileConverter(object):
         try:
             if not self.get_file_extension(epub_file_full_path).lower() == '.pdf':
                 subprocess.call(['ebook-convert', epub_file_full_path, pdf_file_full_path])
-            subprocess.call(['pdftocairo', '-png', pdf_file_full_path, current_path])
+
+            img_ext = WELUT_IMAGES_EXTENSION.replace('.', '-')
+            subprocess.call(['pdftocairo', img_ext, pdf_file_full_path, current_path])
 
             # try to move all .png files from previous path to next path
             # ('/path/to/env-welut/welut/welut_demo/media/ebooks/2017/11', '13')
