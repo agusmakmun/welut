@@ -18,6 +18,23 @@
 </head>
 
 <body>
+  <div class="container">
+    <hr />
+    <div class="panel panel-default">
+      <div class="panel-heading">Add a Book</div>
+      <div class="panel-body">
+        <form method="post" action="." enctype="multipart/form-data">{% csrf_token %}
+          <div class="form-group">
+            {{ ebook_form.as_p }}
+          </div>
+          <div class="form-group">
+            {{ welut_form.as_p }}
+          </div>
+          <button class="btn btn-success" type="submit">Add Book</button>
+        </form>
+      </div>
+    </div>
+  </div>
   <div class="container text-center">
     <h3>{{ ebook.title }}</h3>
     <hr/>
